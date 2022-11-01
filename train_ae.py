@@ -16,6 +16,8 @@ from lib.networks.training import train, eval
 from lib.networks.utils import cnt_params
 from datetime import datetime
 
+print("Hello!")
+
 def define_options_parser():
     parser = argparse.ArgumentParser(description='Model training script. Provide a suitable config.')
     parser.add_argument('config', type=str, help='Path to config file in YAML format.')
