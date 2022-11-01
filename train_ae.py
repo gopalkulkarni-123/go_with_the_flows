@@ -45,7 +45,7 @@ def define_options_parser():
 
 def main_worker(gpu, ngpus_per_node, args):
     with io.open(args.config, 'r') as stream:
-        config = yaml.load(stream)
+        config = yaml.full_load(stream)
     config['jobid'] = args.jobid
     if not 'logging_path' in config.keys():
         name_extension = config['jobid'] if config['jobid'] != '' else datetime.now().strftime("%Y%m%d_%H%M%S")

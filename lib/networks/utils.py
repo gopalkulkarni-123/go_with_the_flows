@@ -2,7 +2,7 @@ import torch
 import numpy as np
 from scipy.stats import entropy
 
-from lib.metrics.StructuralLosses.nn_distance import nn_distance
+#from lib.metrics.StructuralLosses.nn_distance import nn_distance
 
 
 class AverageMeter(object):
@@ -31,8 +31,8 @@ def cnt_params(params):
     return sum(p.numel() for p in params if p.requires_grad)
 
 
-def distChamferCUDA(x, y):
-    return nn_distance(x, y)
+#def distChamferCUDA(x, y):
+    #return nn_distance(x, y)
 
 
 def f_score(predicted_clouds, true_clouds, threshold=0.001):

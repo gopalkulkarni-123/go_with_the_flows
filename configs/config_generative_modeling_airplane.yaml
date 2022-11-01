@@ -34,7 +34,7 @@ max_lr: 0.000256
 meshes_fname: ShapeNetCore55v2_meshes_resampled.h5
 min_beta2: 0.99
 min_lr: 0.000256
-model_name: airplane_gen_mode.pkl
+model_name: generative_model_airplane_pretrained.pkl
 n_components: 4
 n_epochs: 800
 num_workers: 8
@@ -45,7 +45,7 @@ p_decoder_n_flows: 21
 p_latent_space_size: 3
 p_prior_n_layers: 1
 params_reduce_mode: depth_and_feature
-path2data: your/path/to/data
+path2data: /home/h6/goku454c/go_with_the_flows/Data
 path2save: ./results
 pc_enc_init_n_channels: 3
 pc_enc_init_n_features: 64
