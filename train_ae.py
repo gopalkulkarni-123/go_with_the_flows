@@ -16,7 +16,6 @@ from lib.networks.training import train, eval
 from lib.networks.utils import cnt_params
 from datetime import datetime
 
-print("Hello!")
 
 def define_options_parser():
     parser = argparse.ArgumentParser(description='Model training script. Provide a suitable config.')
@@ -160,6 +159,8 @@ def main_worker(gpu, ngpus_per_node, args):
     if gpu == 0:
         tb_path = os.path.join(config['logging_path'], 'log')
         summary_writer = SummaryWriter(tb_path)
+
+    model.show()
 
     min_loss = 10000
     for epoch in range(cur_epoch, config['n_epochs']):

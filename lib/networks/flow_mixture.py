@@ -41,6 +41,10 @@ class Flow_Mixture_Model(Local_Cond_RNVP_MC_Global_RNVP_VAE):
                                           mu_weight_std=0.001, mu_bias=0.0,
                                           logvar_weight_std=0.01, logvar_bias=0.0)
     
+    def show():
+        print("Flow_Mixture_Model")
+
+
     def _get_decoder_params(self):
         '''
         according to different params reduce mode, decide feature size and number of coupling layers.
@@ -179,6 +183,7 @@ class Flow_Mixture_Model(Local_Cond_RNVP_MC_Global_RNVP_VAE):
             return output_decoder, mixture_weights_logits
 
 class Flow_Mixture_SVR_Model(Flow_Mixture_Model):
+
     ''' Train class for flow mixture model for single view reconstruction
     Args:
         img_encoder: encoder used for encoding image
@@ -228,3 +233,6 @@ class Flow_Mixture_SVR_Model(Flow_Mixture_Model):
         output['g_prior_mus'] += buf_g[1]
         output['g_prior_logvars'] += buf_g[2]
         return output
+
+model =Flow_Mixture_Model
+print(model.show)
