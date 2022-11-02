@@ -58,7 +58,9 @@ class Flow_Mixture_Model(Local_Cond_RNVP_MC_Global_RNVP_VAE):
         else:  # if n != compute reduced params
             if self.params_reduce_mode == 'depth_and_feature':
                 decoder_depth = math.ceil(self.p_decoder_n_flows / math.sqrt(n))
+                print("decoder_depth is ", decoder_depth)
                 p_decoder_n_features, _ = self._get_p_decoder_n_features(decoder_depth)
+                print("p_decoder_n_features is",p_decoder_n_features)
             elif self.params_reduce_mode == 'depth_first':
                 # we ceil to ensure minimum depth 1 in regular cases
                 decoder_depth = math.ceil(self.p_decoder_n_flows / n)
@@ -233,6 +235,3 @@ class Flow_Mixture_SVR_Model(Flow_Mixture_Model):
         output['g_prior_mus'] += buf_g[1]
         output['g_prior_logvars'] += buf_g[2]
         return output
-
-model =Flow_Mixture_Model
-print(model.show)

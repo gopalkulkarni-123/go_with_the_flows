@@ -37,7 +37,7 @@ min_lr: 0.000256
 model_name: generative_model_airplane_pretrained.pkl
 n_components: 4
 n_epochs: 800
-num_workers: 8
+num_workers: 3
 p_decoder_base_type: free
 p_decoder_base_var: -3.9551
 p_decoder_n_features: 64
