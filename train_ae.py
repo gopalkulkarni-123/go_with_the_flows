@@ -160,7 +160,6 @@ def main_worker(gpu, ngpus_per_node, args):
         tb_path = os.path.join(config['logging_path'], 'log')
         summary_writer = SummaryWriter(tb_path)
 
-    print(model)
 
     min_loss = 10000
     for epoch in range(cur_epoch, config['n_epochs']):
