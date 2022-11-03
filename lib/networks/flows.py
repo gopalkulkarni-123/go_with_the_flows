@@ -4,7 +4,7 @@ import torch
 import torch.nn as nn
 import numpy as np
 
-from layers import SharedDot, Swish
+from .layers import SharedDot, Swish
 
 
 class CondRealNVPFlow3D(nn.Module):
