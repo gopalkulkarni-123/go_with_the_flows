@@ -1,7 +1,7 @@
 import torch.nn as nn
 
-from flows import RealNVPFlowCouple
-from flows import CondRealNVPFlow3DTriple
+from .flows import RealNVPFlowCouple
+from .flows import CondRealNVPFlow3DTriple
 
 
 class GlobalRNVPDecoder(nn.Module):
