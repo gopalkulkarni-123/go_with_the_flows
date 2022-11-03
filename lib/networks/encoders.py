@@ -3,7 +3,7 @@ from collections import OrderedDict
 import torch
 import torch.nn as nn
 
-from layers import SharedDot, Swish
+from .layers import SharedDot, Swish
 
 
 class PointNetCloudEncoder(nn.Module):
