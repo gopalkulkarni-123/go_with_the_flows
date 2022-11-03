@@ -41,9 +41,6 @@ class Flow_Mixture_Model(Local_Cond_RNVP_MC_Global_RNVP_VAE):
                                           mu_weight_std=0.001, mu_bias=0.0,
                                           logvar_weight_std=0.01, logvar_bias=0.0)
     
-    def show():
-        print("Flow_Mixture_Model")
-
 
     def _get_decoder_params(self):
         '''
