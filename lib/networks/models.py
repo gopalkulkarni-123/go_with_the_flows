@@ -1,13 +1,13 @@
 import torch
 import torch.nn as nn
 
-from .resnet import resnet18
+from resnet import resnet18
 
-from .encoders import PointNetCloudEncoder
-from .encoders import FeatureEncoder
+from encoders import PointNetCloudEncoder
+from encoders import FeatureEncoder
 
-from .decoders import GlobalRNVPDecoder
-from .decoders import LocalCondRNVPDecoder
+from decoders import GlobalRNVPDecoder
+from decoders import LocalCondRNVPDecoder
 
 
 class Local_Cond_RNVP_MC_Global_RNVP_VAE(nn.Module):
@@ -205,6 +205,9 @@ class Local_Cond_RNVP_MC_Global_RNVP_VAE(nn.Module):
         output['p_prior_logvars'] += buf[2]
 
         return output
+    
+    def show(self):
+        print("Local_Cond_RNVP_MC_Global_RNVP_VAE()")
 
     '''
     def decode(self, p_input, g_sample, n_sampled_points):
@@ -259,3 +262,6 @@ class Local_Cond_RNVP_MC_Global_RNVP_VAE(nn.Module):
             print("decoding")
             output_decoder, mixture_weights_logits = self.decode(p_input, g_sample, sampled_cloud_size, labeled_samples, warmup)
             return output_encoder, output_decoder, mixture_weights_logits
+
+
+print("Hello")
