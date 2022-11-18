@@ -243,8 +243,8 @@ class Local_Cond_RNVP_MC_Global_RNVP_VAE(nn.Module):
             output_decoder: samples list after decoder flow
             mixture_weights_logits: log weight of each flow.
         '''
-        print("p_input is ", p_input.size())
-        print("g_input is ", g_input.size())
+        #print("p_input is ", p_input.size())
+        #print("g_input is ", g_input.size())
 
         sampled_cloud_size = p_input.shape[2] if n_sampled_points is None else n_sampled_points
         if images is not None and self.train_mode == 'p_rnvp_mc_g_rnvp_vae_ic':
@@ -259,6 +259,6 @@ class Local_Cond_RNVP_MC_Global_RNVP_VAE(nn.Module):
             samples, labels, mixture_weights_logits = self.decode(p_input, g_sample, sampled_cloud_size, labeled_samples, warmup)
             return output_encoder, samples, labels, mixture_weights_logits
         else:
-            print("decoding")
+            #print("decoding")
             output_decoder, mixture_weights_logits = self.decode(p_input, g_sample, sampled_cloud_size, labeled_samples, warmup)
             return output_encoder, output_decoder, mixture_weights_logits

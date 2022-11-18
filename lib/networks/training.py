@@ -34,7 +34,9 @@ def train(iterator, model, loss_func, optimizer, scheduler, epoch, iter, warmup,
         scheduler(optimizer, epoch, iter + i)
 
         g_clouds = batch['cloud'].cuda(non_blocking=True)
+        #print("g_cloud in training.py is",g_clouds)                 #testing. Can be removed
         p_clouds = batch['eval_cloud'].cuda(non_blocking=True)
+        #print("p_cloud in training.py is",p_clouds)                 #testing . Can be removed
         # returns shape distributions list in prior flows, samples list in decoder flows
         # and log weights of all flows in decoder flows.
         output_prior, output_decoder, mixture_weights_logits = model(g_clouds, p_clouds, images=None, n_sampled_points=None, labeled_samples=False, warmup=warmup)
