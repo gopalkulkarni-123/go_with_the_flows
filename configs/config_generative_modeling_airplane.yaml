@@ -1,4 +1,4 @@
-batch_size: 5     # 1 for evaluation, 64 for training
+batch_size: 50     # 1 for evaluation, 64 for training
 beta1: 0.9
 chosen_label: 0
 cloud_center: false
