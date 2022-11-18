@@ -45,7 +45,7 @@ p_decoder_n_flows: 21
 p_latent_space_size: 3
 p_prior_n_layers: 1
 params_reduce_mode: depth_and_feature
-path2data: D:/Masters/Univerities/TU Dresden/Post_Admit/Studies/4th Sem/RP/data
+path2data: /home/h6/goku454c/go_with_the_flows/Data
 path2save: ./results
 pc_enc_init_n_channels: 3
 pc_enc_init_n_features: 64
