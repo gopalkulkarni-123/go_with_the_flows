@@ -7,7 +7,7 @@ from lib.networks.decoders import LocalCondRNVPDecoder
 from lib.networks.resnet import resnet18
 from lib.networks.encoders import FeatureEncoder, WeightsEncoder
 
-test_iter = 0
+
 class Flow_Mixture_Model(Local_Cond_RNVP_MC_Global_RNVP_VAE):
     ''' Train class for flow mixture model for generation and autoencoding
     Args:
@@ -123,6 +123,7 @@ class Flow_Mixture_Model(Local_Cond_RNVP_MC_Global_RNVP_VAE):
         return mixture_weights_logits
 
     def decode(self, p_input, g_sample, n_sampled_points, labeled_samples=False, warmup=False):
+        test_iter = 0
         '''
         mixtures of flows in decoder.
 
@@ -149,7 +150,7 @@ class Flow_Mixture_Model(Local_Cond_RNVP_MC_Global_RNVP_VAE):
             assert p_input.shape[0] == 1
             print("mixture_weights_logits is being used")
             #print(p_input.shape[0])
-            test_iter = test_iter+1
+            test_iter = test_iter + 1
             print(test_iter)
             print(p_input.size())
             print(mixture_weights_logits)
