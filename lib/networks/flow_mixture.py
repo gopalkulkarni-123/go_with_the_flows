@@ -7,7 +7,7 @@ from lib.networks.decoders import LocalCondRNVPDecoder
 from lib.networks.resnet import resnet18
 from lib.networks.encoders import FeatureEncoder, WeightsEncoder
 
-
+test_iter = 0
 class Flow_Mixture_Model(Local_Cond_RNVP_MC_Global_RNVP_VAE):
     ''' Train class for flow mixture model for generation and autoencoding
     Args:
@@ -148,7 +148,9 @@ class Flow_Mixture_Model(Local_Cond_RNVP_MC_Global_RNVP_VAE):
             #when evaluation, each time, only one shape is inputed
             assert p_input.shape[0] == 1
             print("mixture_weights_logits is being used")
-            print(p_input.shape[0])
+            #print(p_input.shape[0])
+            test_iter = test_iter+1
+            print(test_iter)
             print(p_input.size())
             print(mixture_weights_logits)
             #computes the probabilities of all flows
