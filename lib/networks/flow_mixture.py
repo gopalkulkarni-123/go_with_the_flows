@@ -147,7 +147,7 @@ class Flow_Mixture_Model(Local_Cond_RNVP_MC_Global_RNVP_VAE):
         else:
             #when evaluation, each time, only one shape is inputed
             assert p_input.shape[0] == 1
-
+            print("mixture_weights_logits is being used")
             #computes the probabilities of all flows
             logits_exp = np.exp(mixture_weights_logits[0].detach().cpu().numpy())
             probs = logits_exp / logits_exp.sum()
