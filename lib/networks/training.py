@@ -34,7 +34,7 @@ def train(iterator, model, loss_func, optimizer, scheduler, epoch, iter, warmup,
         scheduler(optimizer, epoch, iter + i)
 
         print("iteration number is",i)
-        print("batch is ",batch)
+        #print("batch is ",batch)
         g_clouds = batch['cloud'].cuda(non_blocking=True)
         #print("g_cloud in training.py is",g_clouds)                 #testing. Can be removed
         p_clouds = batch['eval_cloud'].cuda(non_blocking=True)
