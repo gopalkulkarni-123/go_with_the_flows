@@ -165,7 +165,7 @@ def main_worker(gpu, ngpus_per_node, args):
     for epoch in range(cur_epoch, config['n_epochs']):
         warmup = True if epoch < args.warmup_epoch else False
         train(train_iterator, model, criterion, optimizer, scheduler, epoch, cur_iter, warmup, summary_writer, **config)
-        min_loss = eval(eval_iterator, model, criterion, optimizer, epoch, cur_iter, warmup, min_loss, summary_writer, **config)
+        #min_loss = eval(eval_iterator, model, criterion, optimizer, epoch, cur_iter, warmup, min_loss, summary_writer, **config)
         cur_iter = 0
 
     summary_writer.close()
