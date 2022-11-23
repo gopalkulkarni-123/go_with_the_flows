@@ -26,13 +26,15 @@ def train(iterator, model, loss_func, optimizer, scheduler, epoch, iter, warmup,
     torch.set_grad_enabled(True)
 
     end = time.time()
-
+#for loop starts
     for i, batch in enumerate(iterator):
         if iter + i >= len(iterator):
             break
         data_time.update(time.time() - end)
         scheduler(optimizer, epoch, iter + i)
 
+        print("iteration number is",i)
+        print("batch is ",batch)
         g_clouds = batch['cloud'].cuda(non_blocking=True)
         #print("g_cloud in training.py is",g_clouds)                 #testing. Can be removed
         p_clouds = batch['eval_cloud'].cuda(non_blocking=True)
@@ -81,6 +83,7 @@ def train(iterator, model, loss_func, optimizer, scheduler, epoch, iter, warmup,
                 'model_state': sd,
                 'optimizer_state': optimizer.state_dict()
             }, model_name)
+#for loop ends
 
     # write to tensorboard
     if kwargs['logging']:
