@@ -7,7 +7,7 @@
 CXX := g++
 PYTHON := python
 # NVCC := /scratch/horus/vsydorov/_stable/built/libs/cuda10.0.130/extract/bin/nvcc
-NVCC := usr/bin/nvcc
+NVCC := /trinity/shared/pkg/devel/cuda/10.2/bin/nvcc
 
 # PYTHON Header path
 PYTHON_HEADER_DIR := $(shell $(PYTHON) -c 'from distutils.sysconfig import get_python_inc; print(get_python_inc())')
